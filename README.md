@@ -40,25 +40,38 @@ Step 11: type following command for partitioning after checking that you have se
  2. type d (to delete partition)
  again d until you delete all the partitions
  
- Now create new partitions for the installations to create new partitions type 
- 3. n
+ Now create new partitions for the installations to create new partitions type
+
+3. n
+  
   ->hit enter for 0-128
+  
   ->hit enter for 34-122142686 default(2048):
+  
   -> now for rest EFI drive type +512M  (NOTE this will take 512MB as EFI partition and rest will be sdb so efi partition is sda)
+  
   -> remove signature ? : yes
+  
   -> change type of EFI partition to EFI.
   |
   |
+  
   -> type L -> this will list all the partition types.
      select 1 (EFI partition)
+  
   -> hit q to quit list 
+  
   -> select 1
+  
   -> type n
+  
   1. default:
+  
   2. default
+  
   3. hit yes.
   
-  Once done hit w to write to disk.
+ Once done hit w to write to disk.
   
  Step 12: Now format drives
  
