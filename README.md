@@ -76,9 +76,9 @@ Step 11: type following command for partitioning after checking that you have se
  Step 12: Now format drives
  
  -> mkfs.fat -F32 /dev/sda1   (Partition 1, This will be formatted with .fat type (Primary partition))
+ 
  -> mkfs.ext4 /dev/sda2       (Partition 2, This will be formatted wit ext4 file systems (Primary))
-  
-  
+   
   # NOW WE ARE DONE WITH FIRST PART THAT IS FILE SYSTEM CREATION NOW WE DO THE INSTALLAION.
   (will update soon)
   Step 13 : Setup internet 
