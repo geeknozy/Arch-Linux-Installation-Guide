@@ -27,61 +27,59 @@ Step 8: Jump to Install media.
 
 Step 9: you will be prompted with CLI as root@archiso
 
-Step 9: Figure out which hard disk you are using by typing command 
- 
-         ```fdisk -l```
+Step 9: Figure out which hard disk you are using by typing command fdisk -l
 
 Step 10: select your HDD (Don't touch the USB) generally it will be /dev/sda
 
 Step 11: type following command for partitioning after checking that you have selected the right HDD
 
-1. ```fdisk /dev/sda0```
+ 1. ```fdisk /dev/sda0```
  
  Delete all file partition systems.
  
- 2. type ```d``` (to delete partition)
+ 2. type d (to delete partition)
  again d until you delete all the partitions
  
  Now create new partitions for the installations to create new partitions type
 
-3. type ```n```
+3. n
   
   ->hit enter for 0-128
   
   ->hit enter for 34-122142686 default(2048):
   
-  -> now for rest EFI drive type ```+512M```  (NOTE this will take 512MB as EFI partition and rest will be sdb so efi partition is sda)
+  -> now for rest EFI drive type +512M  (NOTE this will take 512MB as EFI partition and rest will be sdb so efi partition is sda)
   
-  -> remove signature ? : ```yes```
+  -> remove signature ? : yes
   
   -> change type of EFI partition to EFI.
   |
   |
   
-  -> type ```L``` -> this will list all the partition types.
+  -> type L -> this will list all the partition types.
      select 1 (EFI partition)
   
-  -> hit ```q``` to quit list 
+  -> hit q to quit list 
   
-  -> select ```1```
+  -> select 1
   
-  -> type ```n```
+  -> type n
   
   1. default: hit enter
   
   2. default: hit enter
   
-  3. hit yes/Type ```Y```.
+  3. hit yes.
   
  Once done 
  
- 4. hit ```w``` to write to disk.
+ 4. hit w to write to disk.
   
  Step 12: Now format drives
  
- ->Command : ```mkfs.fat -F32 /dev/sda1```   (Partition 1, This will be formatted with .fat type (Primary partition))
+ -> mkfs.fat -F32 /dev/sda1   (Partition 1, This will be formatted with .fat type (Primary partition))
  
- ->Next command : ```mkfs.ext4 /dev/sda2```  (Partition 2, This will be formatted wit ext4 file systems (Primary))
+ -> mkfs.ext4 /dev/sda2       (Partition 2, This will be formatted wit ext4 file systems (Primary))
    
   # NOW WE ARE DONE WITH FIRST PART THAT IS FILE SYSTEM CREATION NOW WE DO THE INSTALLAION.
   (will update soon)
