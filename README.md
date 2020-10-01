@@ -6,7 +6,7 @@ This is a modified guide on how to install Arch Linux on UEFI enabled systems.
 
 This guide is made in such a way that new users to arch linux may seem helpfull and can follow along the isntallation steps and can install Arch-Linux on thier systems.
 
-# Warning : Any dataloss or system brick by using this guide I/geeknozy will/should not be held responsible. This guide will only provide easier steps to install Arch-Linux not the official way of doing things, so as to say : -> RTFM  -> Arch wiki is one of the greatest documentation ever.
+# Warning : Any dataloss or system brick by using this guide I/geeknozy will/should not be held responsible. This guide will only provide easier steps to install Arch-Linux not the official way of doing things, so as to say : -> RTFM  -> Arch wiki is one of the greatest documentations ever.
 
 
 Step 1: Go to https://archlinux.org
@@ -40,7 +40,7 @@ Step 11: type following command for partitioning after checking that you have se
  Delete all file partition systems.
  
  2. type ```d``` (to delete partition)
- again d until you delete all the partitions
+ again ```d``` until you delete all the partitions
  
  Now create new partitions for the installations to create new partitions type
 
