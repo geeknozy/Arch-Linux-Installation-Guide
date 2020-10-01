@@ -29,7 +29,7 @@ Step 9: you will be prompted with CLI as root@archiso
 
 Step 9: Figure out which hard disk you are using by typing command 
  
-         ```fdisk -l```
+         fdisk -l
 
 Step 10: select your HDD (Don't touch the USB) generally it will be /dev/sda
 
