@@ -65,13 +65,15 @@ Step 11: type following command for partitioning after checking that you have se
   
   -> type n
   
-  1. default:
+  1. default: hit enter
   
-  2. default
+  2. default: hit enter
   
   3. hit yes.
   
- Once done hit w to write to disk.
+ Once done 
+ 
+ 4. hit w to write to disk.
   
  Step 12: Now format drives
  
