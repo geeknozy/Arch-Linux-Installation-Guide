@@ -1,4 +1,4 @@
-# Arch-Linux-Installation-Guide-2020-October (will be updated when ISO changes every month)
+# Arch-Linux-Installation-Guide (Will make changes when arch-wiki guide makes changes)
 
 # modified and easy way to install arch linux - by geeknozy
 
