@@ -27,7 +27,7 @@ Step 8: Jump to Install media.
 
 Step 9: You will be prompted with CLI as root@archiso
 
-Step 10: Follow this link for Partition scheme : 
+Step 10: Follow this link for Partition : https://github.com/geeknozy/Disk-partition-guide-on-linux-for-installation
 
 Step 11: Once done with partition scheme now mount the partitions
 
