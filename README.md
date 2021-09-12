@@ -75,7 +75,7 @@ This will take little time to download and install base packages.
 #### Step 19: Generating your Locales (Languages and keyboards).
 
 ```nano /etc/locale.gen```
-find for line with ``` #en_US.UTF-8 UTF-8 ``` or your locale 
+find for line with ``` #en_US.UTF-8 UTF-8``` or your locale 
 
 uncomment that line by removeing # at the begening of the line.
 
@@ -85,6 +85,7 @@ type - ```locale-gen```
 
 type - ```nano /etc/locale.conf``` -> to add genrated locale to your conf file.
 add these on the first line- 
+
 ```LANG=en_US.UTF-8``` - save and exit.
 
 #### Step 20: Configuring host system.
