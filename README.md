@@ -1,4 +1,4 @@
-# Arch-Linux-Installation-Guide (Will make changes when arch-wiki guide makes changes)
+# Arch-Linux-Installation-Guide
 
 # modified and easy way to install arch linux - by geeknozy
 
@@ -95,9 +95,9 @@ add your desired name for the system. - save and exit.
 
 add these lines after first 2 lines with # comment
 
-```127.0.0.1     localhost```
-```::1           localhost```
-```127.0.1.1     hostname.localdomain     hostname```
+---```127.0.0.1     localhost```---
+---```::1           localhost```---
+---```127.0.1.1     hostname.localdomain     hostname```---
 
 NOTE: the hostname is the one you set with above hostname file.
 
@@ -147,4 +147,4 @@ Step 27: Done with the base install now type
 REBOOT
 ```reboot``` -> if you get greeted by grub then you successfully installed base ARCH_LINUX.
 
-# We are done with the base install of Arch Linux without graphical user interface. GUI manual will be made soon. Happy saying 'BTW I use ARCH'.
+### We are done with the base install of Arch Linux without graphical user interface. GUI manual will be made soon. Happy saying 'BTW I use ARCH'.
