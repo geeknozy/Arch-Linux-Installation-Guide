@@ -1,6 +1,6 @@
 # Arch-Linux-Installation-Guide
 
-# modified and easy way to install arch linux - by geeknozy
+##### modified and easy way to install arch linux - by geeknozy
 
 This is a modified guide on how to install Arch Linux on UEFI enabled systems.
 
@@ -149,4 +149,4 @@ uncommment that line - save and exit.
 #### REBOOT
 ```reboot``` -> if you get greeted by grub then you successfully installed base ARCH_LINUX.
 
-### We are done with the base install of Arch Linux without graphical user interface. GUI manual will be made soon. Happy saying 'BTW I use ARCH'.
+##### We are done with the base install of Arch Linux without graphical user interface. GUI manual will be made soon. Happy saying 'BTW I use ARCH'.
