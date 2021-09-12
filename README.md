@@ -41,7 +41,7 @@ This guide is made in such a way that new users to arch linux may seem helpfull 
 
 #### Step 13: Now downloading the base packages for the system
 
-```pacstrap /mnt base base-devel linux linux-firmware nano intel-ucode```
+```pacstrap /mnt base base-devel linux linux-headers linux-firmware nano intel-ucode```
 
 ##### NOTE: nano is my preferred editor you can also use other command line based like VIM editor.
 ##### NOTE: intel-ucode if you have intel processors or else if you have amd processor use amd-ucode.
