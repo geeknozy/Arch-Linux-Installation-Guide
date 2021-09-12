@@ -95,9 +95,9 @@ add your desired name for the system. - save and exit.
 
 add these lines after first 2 lines with # comment
 
----```127.0.0.1     localhost```---
----```::1           localhost```---
----```127.0.1.1     hostname.localdomain     hostname```---
+```127.0.0.1     localhost```\
+```::1           localhost```\
+```127.0.1.1     hostname.localdomain     hostname```\
 
 NOTE: the hostname is the one you set with above hostname file.
 
