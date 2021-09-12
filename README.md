@@ -25,7 +25,7 @@ This guide is made in such a way that new users to arch linux may seem helpfull 
 
 #### Step 8: Jump to Install media.
 
-#### Step 9: You will be prompted with CLI as root@archiso
+#### Step 9: You will be prompted with CLI as ```root@archiso```
 
 #### Step 10: Follow this link for Partition : https://github.com/geeknozy/Disk-partition-guide-on-linux-for-installation
 
