@@ -83,8 +83,9 @@ save the file exit editor
 
 type - ```locale-gen```
 
-type - ```nano /etc/locale.conf``` -> to add genrated locale to your conf file.
-add these on the first line - ```LANG=en_US.UTF-8``` - save and exit.
+type - ```nano /etc/locale.conf```\ -> to add genrated locale to your conf file.
+add these on the first line - 
+```LANG=en_US.UTF-8```\ - save and exit.
 
 #### Step 20: Configuring host system.
 
