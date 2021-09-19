@@ -1,13 +1,16 @@
 # Arch-Linux-Installation-Guide
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ##### modified and easy way to install arch linux - by geeknozy
 
 This is a modified guide on how to install Arch Linux on UEFI enabled systems.
 
 This guide is made in such a way that new users to arch linux may seem helpfull and can follow along the isntallation steps and can install Arch-Linux on thier systems.
 
-### Warning : Any dataloss or system brick by using this guide I/geeknozy will/should not be held responsible. This guide will only provide easier steps to install Arch-Linux not the official way of doing things, so as to say : Read the official Arch wiki, it is one of the greatest documentation ever.
+#### Warning : Any dataloss or system brick by using this guide I/geeknozy will/should not be held responsible. This guide will only provide easier steps to install Arch-Linux not the official way of doing things, so as to say : Read the official Arch wiki, it is one of the greatest documentation ever.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #### Step 1: Go to https://archlinux.org
 
@@ -24,7 +27,7 @@ This guide is made in such a way that new users to arch linux may seem helpfull 
 #### Step 7: Jump into your system BIOS select te boot to USB.
 
 #### Step 8: Jump to Install media.
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Step 9: You will be prompted with CLI as ```root@archiso```
 
 #### Step 10: Follow this link for Partition : https://github.com/geeknozy/Disk-partition-guide-on-linux-for-installation
@@ -45,7 +48,7 @@ This guide is made in such a way that new users to arch linux may seem helpfull 
 
 ##### NOTE: nano is my preferred editor you can also use other command line based like VIM editor.
 ##### NOTE: intel-ucode if you have intel processors or else if you have amd processor use amd-ucode.
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 This will take little time to download and install base packages.
 
 #### Step 14: Now after getting cmd prompt. you have to generate fstab file. 
@@ -106,7 +109,7 @@ add these lines after first 2 lines with # comment
 #### Step 21: Give password for root user.
 
 ```passwd``` - set strong password and confirm.
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Step 22: Downlaod grub boot loader.
 
 ```pacman -S grub efibootmgr networkmanager network-manager-applet linux-headers git reflector pulseaudio alsa-utils xdg-utils xdg-user-dirs```
@@ -148,5 +151,5 @@ uncommment that line - save and exit.
 ```umount -a``` - to unmount iso.
 #### REBOOT
 ```reboot``` -> if you get greeted by grub then you successfully installed base ARCH_LINUX.
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ##### We are done with the base install of Arch Linux without graphical user interface. GUI manual will be made soon. Happy saying 'BTW I use ARCH'.
