@@ -2,11 +2,11 @@
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-#### modified and userfriendly way guide to install arch linux - by geeknozy <br />
+### modified and userfriendly way guide to install arch linux - by geeknozy <br />
 
-##### Note : x86-64 architecture with UEFI enabled systems only. <br />
+### Note : x86-64 architecture with UEFI enabled systems only. <br />
 
-This guide is made in such a way that new users to arch linux may seem helpfull and can follow along the isntallation steps and can install Arch-Linux on thier systems.<br />
+##### This guide is made in such a way that new users to arch linux may seem helpfull and can follow along the installation steps and can install Arch-Linux on thier systems.<br />
 
 #### Warning : Any data-loss or system brick by using this guide I/geeknozy will/should not be held responsible. This guide will only provide easier steps to install Arch-Linux not the official way of doing things, so as to say : Read the official Arch wiki, it is one of the greatest documentation ever.<br />
 
