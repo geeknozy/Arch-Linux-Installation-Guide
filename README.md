@@ -159,6 +159,8 @@ add these lines after first 2 lines with # comment <br />
 ```::1           localhost```<br />
 ```127.0.1.1     hostname.localdomain     hostname```<br />
 
+##### NOTE: the hostname is the one you set with above hostname file. <br />
+
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Optional Step <br />
@@ -168,8 +170,6 @@ mkinitcpio <br />
 ```mkinitcpio -P``` <br /> 
 
 wait for this to complete <br />
-
-##### NOTE: the hostname is the one you set with above hostname file. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
