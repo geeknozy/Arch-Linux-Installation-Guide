@@ -249,8 +249,7 @@ uncommment that line - save and exit. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-##### note : if you find any steps confusing or want to contribute or have any feed back <br />
-contact me via <br />
+##### note : if you are stuck in any of the steps / find it confusing, or want to contribute / have any feedback. You can contact me below ways: <br />
 
 ##### [Email] (geeknozy@protonmail.com) <br />
 
