@@ -129,7 +129,7 @@ example : ```ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime``` <br />
 
 ```nano /etc/locale.gen``` <br />
 
-find for line with ``` #en_US.UTF-8 UTF-8``` or your locale file <br /> 
+find for line with ``` #en_US.UTF-8 UTF-8``` (this is for english) or your locale file <br /> 
 
 uncomment that line by removeing # at the begening of the line. <br />
 
