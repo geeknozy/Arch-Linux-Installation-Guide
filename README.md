@@ -1,4 +1,4 @@
-# Arch-Linux-Installation-Guide ** The Arch Way -- no scripts
+# Arch-Linux-Installation-Guide ** The Arch Way - (no scripts)
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
