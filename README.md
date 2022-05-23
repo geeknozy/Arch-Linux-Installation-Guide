@@ -72,11 +72,11 @@
 
 ```pacstrap /mnt base base-devel linux linux-headers linux-firmware nano intel-ucode``` <br />
 
-##### alternative option I prefer lts kernel with arch linux
+##### alternative option, LTS kernel 
 
 ```pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode``` <br />
 
-#### poweruser/gaming oriented tweaked kernel
+#### power-user / gaming oriented tweaked kernel
 
 ```pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano intel-ucode``` <br />
 
@@ -85,7 +85,7 @@
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-This will take little time to download and install base packages based on your mirrors and internet speed. <br />
+This will take some time to download and install base, kernel and included packages based on mirrors / server speed and your internet speed. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
