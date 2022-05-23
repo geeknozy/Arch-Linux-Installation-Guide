@@ -1,8 +1,8 @@
-# Arch-Linux-Installation-Guide
+# Arch-Linux-Installation-Guide ** The Arch Way -- no scripts
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-### modified and userfriendly way guide to install arch linux - by geeknozy <br />
+### userfriendly guide to install arch linux - by geeknozy <br />
 
 ### Note : x86-64 architecture with UEFI enabled systems only. <br />
 
@@ -239,7 +239,7 @@ uncommment that line - save and exit. <br />
 
 #### Reboot your computer <br />
 
-```reboot``` -> if you get greeted by grub then you successfully installed base ARCH_LINUX. <br />
+```reboot``` -> if you get greeted by grub then you successfully installed base Arch Linux. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
