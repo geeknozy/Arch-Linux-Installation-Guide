@@ -153,7 +153,7 @@ add your desired name for the system. - save and exit. <br />
 
 ```nano /etc/hosts``` -> to configure localhost and internet. <br />
 
-add these lines after first 2 lines with # comment <br />
+add these lines after first two heading lines <br />
 
 ```127.0.0.1     localhost```<br />
 ```::1           localhost```<br />
@@ -249,7 +249,7 @@ uncommment that line - save and exit. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-##### note : if you are stuck in any of the steps / find it confusing, or want to contribute / have any feedback. You can contact me below ways: <br />
+##### note : if you are stuck in any of the steps or find it confusing ? or want to contribute / have any feedback ?, feel free to contact me below ways: <br />
 
 ##### [Email me](geeknozy@protonmail.com) <br />
 
