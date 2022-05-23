@@ -107,7 +107,7 @@ This will take little time to download and install base packages based on your m
 
 #### Step 16: Set Time <br />
 
-```timedatectl list-timezones | grep your-country-name``` <br />
+```timedatectl list-timezones | grep your-country-name or timezone name``` <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
@@ -175,7 +175,7 @@ wait for this to complete <br />
 
 #### Step 21: Give password for root user. <br />
 
-```passwd``` - set strong password and confirm. <br />
+```passwd``` - this is to root password so create strong password and confirm. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
