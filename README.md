@@ -253,4 +253,4 @@ uncommment that line - save and exit. <br />
 
 ##### [Email] (geeknozy@protonmail.com) <br />
 
-##### [Discord server] (https://discord.gg/UkbVeqF3aE) <br />
+##### [Discord server] (https://discord.com/invite/3qnMJpdSqa) <br />
