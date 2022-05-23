@@ -195,7 +195,7 @@ accept defaults and download - install packages. <br />
 
 #### Step 23: Installing grub. <br />
 
-```grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=anyname``` <br />
+```grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch``` <br />
 
 after this generating then generate config for grub. <br />
 
@@ -205,7 +205,7 @@ after this generating then generate config for grub. <br />
 
 #### Step 24: Now Enable the services that are needed for the system. <br />
 
-```systemctl enable NetworkManager``` <br />
+```systemctl enable NetworkManager.service``` <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
