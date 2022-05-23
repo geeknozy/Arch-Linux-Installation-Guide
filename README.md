@@ -251,6 +251,8 @@ uncommment that line - save and exit. <br />
 
 ##### note : if you are stuck in any of the steps / find it confusing, or want to contribute / have any feedback. You can contact me below ways: <br />
 
-##### [Email](geeknozy@protonmail.com) <br />
+##### [Email me](geeknozy@protonmail.com) <br />
 
-##### [Discord server](https://discord.com/invite/3qnMJpdSqa) <br />
+or
+
+##### [Join my Discord server](https://discord.com/invite/3qnMJpdSqa) <br />
