@@ -8,7 +8,7 @@
 
 ##### This guide is made in such a way that users may find it helpfull / userfriendly and can follow along with the installation steps and can install Arch-Linux on thier systems.<br />
 
-#### Warning : Any data-loss or system brick by using this guide I/geeknozy will/should not be held responsible. This guide will only provide easier steps to install Arch-Linux not the official way of doing things, so as to say : Read the official Arch wiki, it is one of the greatest documentation ever.<br />
+#### Warning : Any data-loss or system brick by using this guide I / geeknozy will / should not be held responsible. This guide will only provide confusion free steps to install Arch-Linux and might differ what is shown in other tutorials, so as to say : Read the official Arch wiki, it is one of the greatest documentation ever.<br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
