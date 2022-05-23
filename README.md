@@ -4,7 +4,7 @@
 
 ### userfriendly guide to install arch linux - by geeknozy <br />
 
-### Note : x86-64 architecture with UEFI enabled systems only. <br />
+#### Note : This guide is for x86-64 architecture with UEFI enabled systems only. <br />
 
 ##### This guide is made in such a way that new users to arch linux may seem helpfull and can follow along the installation steps and can install Arch-Linux on thier systems.<br />
 
