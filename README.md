@@ -233,7 +233,7 @@ uncommment that line - save and exit. <br />
 
 ```exit``` <br />
 
-```umount -a``` - to unmount iso. <br />
+```umount -R /mnt``` - to unmount iso. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
