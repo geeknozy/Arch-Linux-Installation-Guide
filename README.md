@@ -252,7 +252,3 @@ uncommment that line - save and exit. <br />
 ##### note : if you are stuck in any of the steps or find it confusing ? or want to contribute / have any feedback ?, feel free to contact me below ways: <br />
 
 ##### [Email me](geeknozy@protonmail.com) <br />
-
-or
-
-##### [Join my Discord server](https://discord.com/invite/3qnMJpdSqa) <br />
