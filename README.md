@@ -1,8 +1,9 @@
-# Arch-Linux-Installation-Guide ** The Arch Way - (no scripts)
+# Arch-Linux-Installation-Guide 
+##### The Arch Way - (no scripts)
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-### userfriendly guide to install arch linux - by geeknozy <br />
+### userfriendly guide to install arch linux - by qoeos <br />
 
 #### Note : This guide is for x86-64 architecture with UEFI enabled systems only. <br />
 
