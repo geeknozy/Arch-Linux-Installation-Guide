@@ -49,7 +49,7 @@
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-#### Step 10: Follow this link for Partition : https://github.com/geeknozy/Disk-partition-guide-on-linux-for-installation <br />
+#### Step 10: Follow this link for Partition : https://github.com/qoeos/Disk-partition-guide-on-linux-for-installation <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
@@ -246,7 +246,7 @@ uncommment that line - save and exit. <br />
 
 ##### We are done with the base install of Arch Linux without graphical user interface. Happy saying 'BTW I use ARCH'. <br />
 
-##### [Link for installing Graphical user interface] : (https://github.com/geeknozy/Arch-Linux-GUI/) <br />
+##### [Link for installing Graphical user interface] : (https://github.com/qoeus/Arch-Linux-GUI/) <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
