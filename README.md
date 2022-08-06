@@ -49,7 +49,7 @@
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-#### Step 10: Follow this link for Partition : https://github.com/geeknozy/Disk-partition-guide-on-linux-for-installation <br />
+#### Step 10: Follow this link for Partition : https://github.com/geeknozy/disk-partition-guide-on-linux-for-installation <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
