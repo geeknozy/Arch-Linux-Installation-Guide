@@ -1,5 +1,5 @@
 # Arch-Linux-Installation-Guide 
-#### The Arch Way - no automation script
+#### The Arch Way - without any automated installation script
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
@@ -57,11 +57,11 @@
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-```mount /dev/sda2 /mnt``` -> mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
+```mount /dev/sdX2 /mnt``` -> mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
 
 ```mkdir -p /mnt/boot/efi``` -> creating seperate efi directory to mount efi partition <br />
 
-```mount /dev/sda1 /mnt/boot/efi``` -> mounting efi partition <br />
+```mount /dev/sdX1 /mnt/boot/efi``` -> mounting efi partition <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
