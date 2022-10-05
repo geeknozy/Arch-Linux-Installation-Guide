@@ -201,7 +201,7 @@ useradd -mG wheel username
 ```
 passwd username
 ```
-> NOTE: here username can be your choice 
+> NOTE: here username is the user name which you have given above while creating user
 
 #### Step 26: Add User for sudoers file. <br />
 ```
