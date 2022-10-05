@@ -30,16 +30,15 @@ ___
 #### Step 10: Follow this link for Partition : https://github.com/geeknozy/disk-partition-guide-on-linux-for-installation <br />
 ___
 #### Step 11: Once done with partition scheme now mount the partitions <br />
-___
-- mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
+> mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
 ```
 mount /dev/sdX2 /mnt
 ```
-- creating seperate efi directory to mount efi partition <br />
+> creating seperate efi directory to mount efi partition <br />
 ```
 mkdir -p /mnt/boot/efi
 ``` 
-- mounting efi partition <br />
+> mounting efi partition <br />
 ```
 mount /dev/sdX1 /mnt/boot/efi
 ```
@@ -70,14 +69,14 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ##### NOTE: -U is uuid for devices (will be different for every hardware/disk). <br />
-- type below command to check the generated fstab
+> type below command to check the generated fstab
 ```
 cat /mnt/etc/fstab
 ```
 ___
 
 #### Step 15: Enter the chroot environment. <br />
-- now you have to see that your command prompt change. <br />
+> now you have to see that your command prompt change. <br />
 ```
 arch-chroot /mnt
 ```
@@ -89,54 +88,60 @@ ___
 timedatectl list-timezones | grep your-country-name or timezone name
 ```
 ___
-#### Step 17: you have get your timezone as output. <br />
+#### Step 17: Set timezone. <br />
+> using below command get your time zone here the ```YourRegionName``` might be your country name or region depending on where you are
+> ```zonename``` will be your City or your locality
 ```
 ln -sf /usr/share/zoneinfo/YourRegionName/zonename /etc/localtime
 ``` 
-> example below: 
+> for example below: 
 ```
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 ```
-<br />
 ___
 #### Step 18: sync you hardware clock and system clock. <br />
+
 ```
 hwclock --systohc
 ```
 ___
+
 #### Step 19: Generating your Locales (Languages and keyboards). <br />
+
 ```
 nano /etc/locale.gen
 ```
-- find for line with ```#en_US.UTF-8 UTF-8``` (this is for english) or your locale format <br /> 
 
-- uncomment that line by removeing ```#``` at the begening of the line. <br />
+- > find for line with ```#en_US.UTF-8 UTF-8``` (this is for english) or your locale format <br /> 
 
-- save the file (ctrl+o) and exit nano editor (ctrl+x) <br />
+- > uncomment that line by removing ```#``` at the begening of the line. <br />
 
-- type below command to generate your locale
+- >  save the file (ctrl+o) and exit nano editor (ctrl+x) <br />
+
+- > type below command to generate your locale
 ```
 locale-gen
 ```
-- once executed type below command to add genrated locale to your conf file. <br />
+> once executed type below command to add genrated locale to your conf file. <br />
 ```
 nano /etc/locale.conf
 ```
-- add your locale formate to the config file <br/>
+> add your locale formate to the config file <br/>
 
 ```
 LANG=en_US.UTF-8
 ```
-- save and exit the file <br />
+> save and exit the file <br />
 ___
+
 #### Step 20: Configuring host system. <br />
-- type below command to set host name <br/>
+> type below command to set host name <br/>
 ```
 nano /etc/hostname
 ```
-- add your desired name for the system and save and exit file. <br />
+> add your desired name for the system and save and exit file. <br />
 
-- next to configure localhost and internet.
+> next to configure localhost and internet.
 ```
 nano /etc/hosts
 ```
