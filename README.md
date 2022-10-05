@@ -278,7 +278,7 @@ reboot
 
 ##### We are done with the base install of Arch Linux without graphical user interface. Happy saying 'BTW I use ARCH'. <br />
 
-##### [Link for installing Graphical user interface] : (https://github.com/geeknozy/Arch-Linux-GUI/) <br />
+##### [Link for installing Graphical user interface](https://github.com/geeknozy/Arch-Linux-GUI/) <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
