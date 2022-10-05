@@ -56,12 +56,18 @@
 #### Step 11: Once done with partition scheme now mount the partitions <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
-
-```mount /dev/sdX2 /mnt``` -> mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
-
-```mkdir -p /mnt/boot/efi``` -> creating seperate efi directory to mount efi partition <br />
-
-```mount /dev/sdX1 /mnt/boot/efi``` -> mounting efi partition <br />
+-> mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
+```
+mount /dev/sdX2 /mnt
+```
+-> creating seperate efi directory to mount efi partition <br />
+```
+mkdir -p /mnt/boot/efi
+``` 
+-> mounting efi partition <br />
+```
+mount /dev/sdX1 /mnt/boot/efi
+```
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
@@ -71,15 +77,24 @@
 
 #### Step 13: Now downloading the base packages for the system.<br />
 
-```pacstrap /mnt base base-devel linux linux-headers linux-firmware nano intel-ucode``` <br />
+```
+pacstrap /mnt base base-devel linux linux-headers linux-firmware nano intel-ucode
+```
+<br />
 
 ##### alternative option, LTS kernel 
 
-```pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode``` <br />
+```
+pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode
+```
+<br />
 
-#### power-user / gaming oriented tweaked kernel
+#### power user / high performance tuned kernel
 
-```pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano intel-ucode``` <br />
+```
+pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano intel-ucode
+```
+<br />
 
 ##### NOTE: nano is my preferred editor you can also use other command line based like VIM editor. <br />
 ##### NOTE: intel-ucode if you have intel processors or else if you have amd processor use amd-ucode. <br />
@@ -92,29 +107,42 @@ This will take some time to download and install base, kernel and included packa
 
 #### Step 14: Now after getting command prompt. you have to generate fstab file. <br />
 
-```genfstab -U /mnt >> /mnt/etc/fstab``` <br />
+```
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+<br />
 
 ##### NOTE: -U is uuid for devices (will be different for every hardware/disk. <br />
-
-```cat /mnt/etc/fstab``` -> to see the generated fstab. <br />
+-> to see the generated fstab
+```
+cat /mnt/etc/fstab
+```<br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 15: Enter the chroot environment. <br />
-
-```arch-chroot /mnt``` -> now you have to see that your command prompt change. <br />
+ -> now you have to see that your command prompt change. <br />
+```
+arch-chroot /mnt
+```<br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 16: Set Time <br />
 
-```timedatectl list-timezones | grep your-country-name or timezone name``` <br />
+```
+timedatectl list-timezones | grep your-country-name or timezone name
+```
+<br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 17: you have get your timezone as output. <br />
 
-```ln -sf /usr/share/zoneinfo/Region name/zonename /etc/localtime``` <br />
+```
+ln -sf /usr/share/zoneinfo/Region name/zonename /etc/localtime
+``` 
+<br />
 
 example : ```ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime``` <br />
 
@@ -122,13 +150,19 @@ example : ```ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime``` <br />
 
 #### Step 18: sync you hardware clock and system clock. <br />
 
-```hwclock --systohc``` <br />
+```
+hwclock --systohc
+```
+<br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 19: Generating your Locales (Languages and keyboards). <br />
 
-```nano /etc/locale.gen``` <br />
+```
+nano /etc/locale.gen
+```
+<br />
 
 find for line with ``` #en_US.UTF-8 UTF-8``` (this is for english) or your locale file <br /> 
 
@@ -156,9 +190,12 @@ add your desired name for the system. - save and exit. <br />
 
 add these lines after first two heading lines <br />
 
-```127.0.0.1     localhost```<br />
-```::1           localhost```<br />
-```127.0.1.1     hostname.localdomain     hostname```<br />
+```
+127.0.0.1     localhost
+::1           localhost
+127.0.1.1     hostname.localdomain     hostname
+```
+<br />
 
 ##### NOTE: the hostname is the one you set with above hostname file. <br />
 
@@ -168,7 +205,10 @@ add these lines after first two heading lines <br />
 
 mkinitcpio <br />
 
-```mkinitcpio -P``` <br /> 
+```
+mkinitcpio -P
+``` 
+<br /> 
 
 wait for this to complete <br />
 
@@ -182,11 +222,17 @@ wait for this to complete <br />
 
 #### Step 22: Downlaod grub boot loader. <br />
 
-```pacman -S grub efibootmgr networkmanager network-manager-applet git pulseaudio alsa-utils xdg-utils xdg-user-dirs``` <br />
+```
+pacman -S grub efibootmgr networkmanager network-manager-applet git pulseaudio alsa-utils
+```
+<br />
 
 #### Optional (I use pipewire which is more mature than pulseaudio) <br />
 
-```pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pipewire-pulse pipewire-alsa alsa-utils xdg-utils xdg-user-dirs``` <br />
+```
+pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pipewire-pulse pipewire-alsa alsa-utils
+```
+<br />
 
 Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
 
@@ -196,25 +242,41 @@ accept defaults and download - install packages. <br />
 
 #### Step 23: Installing grub. <br />
 
-```grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch``` <br />
+```
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
+```
+<br />
 
 after this generating then generate config for grub. <br />
 
-```grub-mkconfig -o /boot/grub/grub.cfg``` -> sending output of grub-mkconfig to the grub.cfg file <br />
+-> sending output of grub-mkconfig to the grub.cfg file <br />
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+<br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 24: Now Enable the services that are needed for the system. <br />
 
-```systemctl enable NetworkManager.service``` <br />
+```
+systemctl enable NetworkManager.service
+```
+<br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 25: Add different user (not root) NOTE: This is wheel group user to get sudo privileges. <br />
 
-```useradd -mG wheel username``` <br />
+```
+useradd -mG wheel username
+```
+<br />
 
-```passwd username``` <br />
+```
+passwd username
+```
+<br />
 
 Give strong password for new user. <br />
 
@@ -222,11 +284,16 @@ Give strong password for new user. <br />
 
 #### Step 26: Add User for sudoers file. <br />
 
-```EDITOR=nano visudo``` <br />
+```
+EDITOR=nano visudo
+```<br />
 
-Find the line named <br />
-```#wheel ALL=(ALL) ALL``` under wheel group. <br />
-uncommment that line - save and exit. <br />
+Find the line named under wheel group. <br />
+```
+#wheel ALL=(ALL) ALL
+```
+<br />
+uncommment that line (remove # symbol) - save and exit. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
