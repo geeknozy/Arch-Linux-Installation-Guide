@@ -202,16 +202,17 @@ mkinitcpio -P
 passwd
 ```
 --------------------------------------------------------------------------------------------------------------------------------<br />
+
 #### Step 22: Downlaod grub boot loader. <br />
 ```
 pacman -S grub efibootmgr networkmanager network-manager-applet git pulseaudio alsa-utils
 ```
-#### Optional (I use pipewire which is more mature than pulseaudio) <br />
 
+#### alternative if you prefer pipewire which is more mature than pulseaudio <br />
 ```
 pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pipewire-pulse pipewire-alsa alsa-utils
 ```
-- Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
+> Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
 > for other packages accept defaults and download - install packages. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
@@ -221,13 +222,13 @@ pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pip
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
 ```
 > once the grub is installed you should check that no erros are reported which will be shown after execution once done then generate config for grub by sending output of grub-mkconfig to the grub.cfg file using below command <br />
+
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 24: Now Enable the services that are needed for the system. <br />
-
 ```
 systemctl enable NetworkManager.service
 ```
@@ -237,6 +238,7 @@ systemctl enable NetworkManager.service
 ```
 useradd -mG wheel username
 ```
+
 - after the above command type below command to set password to created user
 ```
 passwd username
@@ -247,11 +249,12 @@ passwd username
 ```
 EDITOR=nano visudo
 ```
+
 - Find the line named under wheel group. <br />
 ```
 #wheel ALL=(ALL) ALL
 ```
-- uncommment that line (remove # symbol) - save and exit. <br />
+> uncommment that line (remove # symbol) - save and exit. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
