@@ -9,7 +9,7 @@
 
 #### Warning : Any data-loss or system brick by using this guide I / geeknozy will / should not be held responsible. This guide will only provide confusion free steps to install Arch-Linux and might differ what is shown in other tutorials, so as to say : Read the official Arch wiki, it is one of the greatest documentation ever.<br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
+___
 
 #### Step 1: Go to https://archlinux.org <br />
 
@@ -76,6 +76,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ```
 cat /mnt/etc/fstab
 ```
+___
 
 #### Step 15: Enter the chroot environment. <br />
 - now you have to see that your command prompt change. <br />
@@ -229,12 +230,12 @@ reboot
 ```
 - if you get greeted by grub then you successfully installed base Arch Linux. <br />
 
-______________________________________________________________________________________________________________________________________<br />
+___
 
 ##### We are done with the base install of Arch Linux without graphical user interface. Happy saying 'BTW I use ARCH'. <br />
 
 ##### [Link for installing Graphical user interface](https://github.com/geeknozy/Arch-Linux-GUI/) <br />
 
-______________________________________________________________________________________________________________________________________<br />
+___
 
 ###### create a pull request if you have any issues 
