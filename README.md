@@ -56,15 +56,15 @@
 #### Step 11: Once done with partition scheme now mount the partitions <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
-> mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
+- mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
 ```
 mount /dev/sdX2 /mnt
 ```
-> creating seperate efi directory to mount efi partition <br />
+- creating seperate efi directory to mount efi partition <br />
 ```
 mkdir -p /mnt/boot/efi
 ``` 
-> mounting efi partition <br />
+- mounting efi partition <br />
 ```
 mount /dev/sdX1 /mnt/boot/efi
 ```
@@ -92,7 +92,7 @@ pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano in
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-This will take some time to download and install base, kernel and included packages based on mirrors / server speed and your internet speed. <br />
+> This will take some time to download and install base, kernel and included packages based on mirrors / server speed and your internet speed. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
@@ -103,32 +103,31 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ##### NOTE: -U is uuid for devices (will be different for every hardware/disk. <br />
--> to see the generated fstab
+- to see the generated fstab
 ```
 cat /mnt/etc/fstab
 ```
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 15: Enter the chroot environment. <br />
-> now you have to see that your command prompt change. <br />
+- now you have to see that your command prompt change. <br />
 ```
 arch-chroot /mnt
 ```
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 16: Set Time <br />
+> get your timezone if you are not aware using below command
 ```
 timedatectl list-timezones | grep your-country-name or timezone name
 ```
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 17: you have get your timezone as output. <br />
-
 ```
 ln -sf /usr/share/zoneinfo/Region name/zonename /etc/localtime
 ``` 
-
-example : ```ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime``` <br />
+> example : ```ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime``` <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
@@ -142,41 +141,41 @@ hwclock --systohc
 ```
 nano /etc/locale.gen
 ```
-> find for line with ```#en_US.UTF-8 UTF-8``` (this is for english) or your locale format <br /> 
+- find for line with ```#en_US.UTF-8 UTF-8``` (this is for english) or your locale format <br /> 
 
-> uncomment that line by removeing ```#``` at the begening of the line. <br />
+- uncomment that line by removeing ```#``` at the begening of the line. <br />
 
-> save the file (ctrl+o) and exit nano editor (ctrl+x) <br />
+- save the file (ctrl+o) and exit nano editor (ctrl+x) <br />
 
-> type below command to generate your locale
+- type below command to generate your locale
 ```
 locale-gen
 ```
-> once executed type below command to add genrated locale to your conf file. <br />
+- once executed type below command to add genrated locale to your conf file. <br />
 ```
 nano /etc/locale.conf
 ```
-> add your locale formate to the config file <br/>
+- add your locale formate to the config file <br/>
 
 ```
 LANG=en_US.UTF-8
 ```
-> save and exit the file <br />
+- save and exit the file <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 20: Configuring host system. <br />
-> type below command to set host name <br/>
+- type below command to set host name <br/>
 ```
 nano /etc/hostname
 ```
-> add your desired name for the system and save and exit file. <br />
+- add your desired name for the system and save and exit file. <br />
 
-> next to configure localhost and internet.
+- next to configure localhost and internet.
 ```
 nano /etc/hosts
 ```
-> add these lines after first two heading lines <br />
+- add these lines after first two heading lines <br />
 ```
 127.0.0.1     localhost
 ::1           localhost
@@ -188,17 +187,17 @@ nano /etc/hosts
 
 #### Optional Step <br />
 
-> mkinitcpio is a Bash script used to create an initial ramdisk environment<br />
+- mkinitcpio is a Bash script used to create an initial ramdisk environment<br />
 
 ```
 mkinitcpio -P
 ``` 
-> wait for this to complete <br />
+- wait for mkinitcpio execution to complete <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 21: Give password for root user. <br />
-> this is to set root user password so create strong password and confirm. <br />
+- this is to set root user password so create strong password and confirm. <br />
 ```
 passwd
 ```
@@ -212,9 +211,8 @@ pacman -S grub efibootmgr networkmanager network-manager-applet git pulseaudio a
 ```
 pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pipewire-pulse pipewire-alsa alsa-utils
 ```
-> Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
-
-> for others accept defaults and download - install packages. <br />
+- Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
+> for other packages accept defaults and download - install packages. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
@@ -222,9 +220,9 @@ pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pip
 ```
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
 ```
-> after this generating then generate config for grub. <br />
+- after this generating then generate config for grub. <br />
 
-> sending output of grub-mkconfig to the grub.cfg file <br />
+- sending output of grub-mkconfig to the grub.cfg file <br />
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -241,7 +239,7 @@ systemctl enable NetworkManager.service
 ```
 useradd -mG wheel username
 ```
-> after the above command type below command to set password to created user
+- after the above command type below command to set password to created user
 ```
 passwd username
 ```
@@ -251,11 +249,11 @@ passwd username
 ```
 EDITOR=nano visudo
 ```
-> Find the line named under wheel group. <br />
+- Find the line named under wheel group. <br />
 ```
 #wheel ALL=(ALL) ALL
 ```
-> uncommment that line (remove # symbol) - save and exit. <br />
+- uncommment that line (remove # symbol) - save and exit. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
@@ -263,7 +261,7 @@ EDITOR=nano visudo
 ```
 exit
 ```
-> after exit command type below command to unmount mounted partitions for safer reboot.
+- after exit command type below command to unmount mounted partitions for safer reboot.
 ```
 umount -R /mnt
 ```
@@ -273,7 +271,7 @@ umount -R /mnt
 ```
 reboot
 ```
-> if you get greeted by grub then you successfully installed base Arch Linux. <br />
+- if you get greeted by grub then you successfully installed base Arch Linux. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
