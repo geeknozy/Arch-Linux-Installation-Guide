@@ -1,8 +1,6 @@
 # Arch-Linux-Installation-Guide 
 #### The Arch Way - without any automated installation script
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### userfriendly guide to install arch linux - by geeknozy <br />
 
 #### Note : This guide is for x86-64 architecture with UEFI enabled systems only. <br />
@@ -15,47 +13,26 @@
 
 #### Step 1: Go to https://archlinux.org <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 2: On the right top corner click on download button  which will redirect you to the download page.<br />
-
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 3: Select the mirror closer to your country or the global mirror to download the ISO package.<br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 4: Note the md5/sha256sum (checksum) provided <br />
-
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 5: check the integrity of the downloaded ISO file with md5/sha256sum. <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 6: Use CLI-DD(in Linux) / RUFUS-DD or Balena-Etcher to write the ISO to the USB-Stick (note the data in USB will be lost) <br />
-
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 7: Goto your system BIOS select te boot from USB (arch-installation-media). <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 8: Select installation media. <br />
-
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 9: You will be prompted with CLI as ```root@archiso``` <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 10: Follow this link for Partition : https://github.com/geeknozy/disk-partition-guide-on-linux-for-installation <br />
-
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 11: Once done with partition scheme now mount the partitions <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
 - mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
 ```
 mount /dev/sdX2 /mnt
@@ -69,11 +46,7 @@ mkdir -p /mnt/boot/efi
 mount /dev/sdX1 /mnt/boot/efi
 ```
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 12: type ```lsblk``` -> you should see your mount points.<br />
-
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 13: Now downloading the base packages for the system.<br />
 ```
@@ -90,11 +63,7 @@ pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano in
 ##### NOTE: nano is my preferred editor you can also use other command line based like VIM editor. <br />
 ##### NOTE: intel-ucode if you have intel processors or else if you have amd processor use amd-ucode. <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 > This will take some time to download and install base, kernel and included packages based on mirrors / server speed and your internet speed. <br />
-
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 14: Now after getting command prompt. you have to generate fstab file. <br />
 
@@ -107,21 +76,19 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ```
 cat /mnt/etc/fstab
 ```
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 15: Enter the chroot environment. <br />
 - now you have to see that your command prompt change. <br />
 ```
 arch-chroot /mnt
 ```
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 16: Set Time <br />
+
 > get your timezone if you are not aware using below command
 ```
 timedatectl list-timezones | grep your-country-name or timezone name
 ```
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 17: you have get your timezone as output. <br />
 ```
@@ -133,13 +100,10 @@ ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 ```
 <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 18: sync you hardware clock and system clock. <br />
 ```
 hwclock --systohc
 ```
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 19: Generating your Locales (Languages and keyboards). <br />
 ```
@@ -166,8 +130,6 @@ LANG=en_US.UTF-8
 ```
 - save and exit the file <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 20: Configuring host system. <br />
 - type below command to set host name <br/>
 ```
@@ -187,8 +149,6 @@ nano /etc/hosts
 ```
 ##### NOTE: the hostname is the one you set with above hostname file. <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Optional Step <br />
 
 - mkinitcpio is a Bash script used to create an initial ramdisk environment<br />
@@ -196,9 +156,7 @@ nano /etc/hosts
 ```
 mkinitcpio -P
 ``` 
-- wait for mkinitcpio execution to complete <br />
-
---------------------------------------------------------------------------------------------------------------------------------<br />
+> wait for mkinitcpio execution to complete <br />
 
 #### Step 21: Give password for root user. <br />
 - this is to set root user password so create strong password and confirm. <br />
@@ -219,8 +177,6 @@ pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pip
 > Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
 > for other packages accept defaults and download - install packages. <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 23: Installing grub. <br />
 ```
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
@@ -230,24 +186,23 @@ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 24: Now Enable the services that are needed for the system. <br />
 ```
 systemctl enable NetworkManager.service
 ```
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 25: Add different user (not root) NOTE: This is wheel group user to get sudo privileges. <br />
 ```
 useradd -mG wheel username
 ```
+> NOTE: here username can be your choice 
 
 - after the above command type below command to set password to created user
 ```
 passwd username
 ```
---------------------------------------------------------------------------------------------------------------------------------<br />
+> NOTE: here username can be your choice 
 
 #### Step 26: Add User for sudoers file. <br />
 ```
@@ -260,8 +215,6 @@ EDITOR=nano visudo
 ```
 > uncommment that line (remove # symbol) - save and exit. <br />
 
---------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 27: Done with the base install now type <br />
 ```
 exit
@@ -270,7 +223,6 @@ exit
 ```
 umount -R /mnt
 ```
---------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Reboot your computer <br />
 ```
