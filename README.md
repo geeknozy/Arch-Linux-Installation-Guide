@@ -102,8 +102,8 @@ pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano in
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-##### NOTE: -U is uuid for devices (will be different for every hardware/disk. <br />
-- to see the generated fstab
+##### NOTE: -U is uuid for devices (will be different for every hardware/disk). <br />
+- type below command to check the generated fstab
 ```
 cat /mnt/etc/fstab
 ```
@@ -220,9 +220,7 @@ pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pip
 ```
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
 ```
-- after this generating then generate config for grub. <br />
-
-- sending output of grub-mkconfig to the grub.cfg file <br />
+> once the grub is installed you should check that no erros are reported which will be shown after execution once done then generate config for grub by sending output of grub-mkconfig to the grub.cfg file using below command <br />
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
