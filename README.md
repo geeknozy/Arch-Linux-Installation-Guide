@@ -110,31 +110,25 @@ This will take some time to download and install base, kernel and included packa
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
-<br />
 
 ##### NOTE: -U is uuid for devices (will be different for every hardware/disk. <br />
 -> to see the generated fstab
 ```
 cat /mnt/etc/fstab
-```<br />
-
+```
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 15: Enter the chroot environment. <br />
  -> now you have to see that your command prompt change. <br />
 ```
 arch-chroot /mnt
-```<br />
-
+```
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 16: Set Time <br />
-
 ```
 timedatectl list-timezones | grep your-country-name or timezone name
 ```
-<br />
-
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 17: you have get your timezone as output. <br />
@@ -142,28 +136,21 @@ timedatectl list-timezones | grep your-country-name or timezone name
 ```
 ln -sf /usr/share/zoneinfo/Region name/zonename /etc/localtime
 ``` 
-<br />
 
 example : ```ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime``` <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 18: sync you hardware clock and system clock. <br />
-
 ```
 hwclock --systohc
 ```
-<br />
-
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 19: Generating your Locales (Languages and keyboards). <br />
-
 ```
 nano /etc/locale.gen
 ```
-<br />
-
 find for line with ``` #en_US.UTF-8 UTF-8``` (this is for english) or your locale file <br /> 
 
 uncomment that line by removeing # at the begening of the line. <br />
@@ -172,31 +159,36 @@ save the file (ctrl+o) exit editor (ctrl+x) note: on nano <br />
 
 type - ```locale-gen``` <br />
 
-type - ```nano /etc/locale.conf``` -> to add genrated locale to your conf file. <br />
-
+type below command to add genrated locale to your conf file. <br />
+```
+nano /etc/locale.conf
+```
 add these on the first line <br />
 
-```LANG=en_US.UTF-8``` - save and exit. <br />
+```
+LANG=en_US.UTF-8
+```
+save and exit. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 20: Configuring host system. <br />
 
-```nano /etc/hostname``` <br />
-
+```
+nano /etc/hostname
+```
 add your desired name for the system. - save and exit. <br />
 
-```nano /etc/hosts``` -> to configure localhost and internet. <br />
-
+ -> to configure localhost and internet. 
+```
+nano /etc/hosts
+```
 add these lines after first two heading lines <br />
-
 ```
 127.0.0.1     localhost
 ::1           localhost
 127.0.1.1     hostname.localdomain     hostname
 ```
-<br />
-
 ##### NOTE: the hostname is the one you set with above hostname file. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
@@ -208,32 +200,27 @@ mkinitcpio <br />
 ```
 mkinitcpio -P
 ``` 
-<br /> 
-
 wait for this to complete <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 21: Give password for root user. <br />
+root password so create strong password and confirm. <br />
 
-```passwd``` - this is to root password so create strong password and confirm. <br />
+```
+passwd
+```
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
-
 #### Step 22: Downlaod grub boot loader. <br />
-
 ```
 pacman -S grub efibootmgr networkmanager network-manager-applet git pulseaudio alsa-utils
 ```
-<br />
-
 #### Optional (I use pipewire which is more mature than pulseaudio) <br />
 
 ```
 pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pipewire-pulse pipewire-alsa alsa-utils
 ```
-<br />
-
 Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
 
 accept defaults and download - install packages. <br />
@@ -241,20 +228,15 @@ accept defaults and download - install packages. <br />
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 23: Installing grub. <br />
-
 ```
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
 ```
-<br />
-
 after this generating then generate config for grub. <br />
 
 -> sending output of grub-mkconfig to the grub.cfg file <br />
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
-<br />
-
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 24: Now Enable the services that are needed for the system. <br />
@@ -262,8 +244,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 systemctl enable NetworkManager.service
 ```
-<br />
-
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 25: Add different user (not root) NOTE: This is wheel group user to get sudo privileges. <br />
@@ -271,43 +251,44 @@ systemctl enable NetworkManager.service
 ```
 useradd -mG wheel username
 ```
-<br />
-
+after the above command type below command to set password to created user
 ```
 passwd username
 ```
-<br />
-
-Give strong password for new user. <br />
-
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 26: Add User for sudoers file. <br />
 
 ```
 EDITOR=nano visudo
-```<br />
+```
 
 Find the line named under wheel group. <br />
 ```
 #wheel ALL=(ALL) ALL
 ```
-<br />
 uncommment that line (remove # symbol) - save and exit. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 27: Done with the base install now type <br />
 
-```exit``` <br />
+```
+exit
+```
+after exit command type below command to unmount mounted partitions for safer reboot.
 
-```umount -R /mnt``` - to unmount iso. <br />
-
+```
+umount -R /mnt
+```
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Reboot your computer <br />
 
-```reboot``` -> if you get greeted by grub then you successfully installed base Arch Linux. <br />
+```
+reboot
+```
+->if you get greeted by grub then you successfully installed base Arch Linux. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
