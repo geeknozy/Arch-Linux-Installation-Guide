@@ -127,7 +127,11 @@ timedatectl list-timezones | grep your-country-name or timezone name
 ```
 ln -sf /usr/share/zoneinfo/Region name/zonename /etc/localtime
 ``` 
-> example : ```ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime``` <br />
+> example : 
+```
+ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+```
+<br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
