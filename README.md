@@ -21,6 +21,7 @@ ___
 ___
 #### Step 6: Use CLI-DD(in Linux) / RUFUS-DD or Balena-Etcher to write the ISO to the USB-Stick (note the data in USB will be lost) <br />
 ___
+-> NOTE: you might have to disable secure boot inorder to boot into arch-live USB
 #### Step 7: Goto your system BIOS select te boot from USB (arch-installation-media). <br />
 ___
 #### Step 8: Select installation media. <br />
