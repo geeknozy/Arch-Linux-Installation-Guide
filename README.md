@@ -89,7 +89,7 @@ pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano in
 ```
 <br />
 
-#### power user / high performance tuned kernel
+##### alternative option power user / high performance tuned kernel
 
 ```
 pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano intel-ucode
