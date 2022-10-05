@@ -31,6 +31,7 @@ ___
 ___
 #### Step 11: Once done with partition scheme now mount the partitions <br />
 > mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
+> here in below mount command the ```X``` in sdX is the letter of your partition depending on your h/w eg : ```sda or sdb or sdc```
 ```
 mount /dev/sdX2 /mnt
 ```
