@@ -56,15 +56,15 @@
 #### Step 11: Once done with partition scheme now mount the partitions <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
--> mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
+> mounting root partition to /mnt of the iso (all packages will be downloaded here). <br />
 ```
 mount /dev/sdX2 /mnt
 ```
--> creating seperate efi directory to mount efi partition <br />
+> creating seperate efi directory to mount efi partition <br />
 ```
 mkdir -p /mnt/boot/efi
 ``` 
--> mounting efi partition <br />
+> mounting efi partition <br />
 ```
 mount /dev/sdX1 /mnt/boot/efi
 ```
@@ -76,26 +76,17 @@ mount /dev/sdX1 /mnt/boot/efi
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 13: Now downloading the base packages for the system.<br />
-
 ```
 pacstrap /mnt base base-devel linux linux-headers linux-firmware nano intel-ucode
 ```
-<br />
-
-##### alternative option, LTS kernel 
-
+##### alternative option if you like LTS kernel 
 ```
 pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode
 ```
-<br />
-
-##### alternative option power user / high performance tuned kernel
-
+##### alternative option for power user / high performance tuned kernel
 ```
 pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano intel-ucode
 ```
-<br />
-
 ##### NOTE: nano is my preferred editor you can also use other command line based like VIM editor. <br />
 ##### NOTE: intel-ucode if you have intel processors or else if you have amd processor use amd-ucode. <br />
 
@@ -119,7 +110,7 @@ cat /mnt/etc/fstab
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 15: Enter the chroot environment. <br />
- -> now you have to see that your command prompt change. <br />
+> now you have to see that your command prompt change. <br />
 ```
 arch-chroot /mnt
 ```
@@ -151,41 +142,41 @@ hwclock --systohc
 ```
 nano /etc/locale.gen
 ```
-find for line with ```#en_US.UTF-8 UTF-8``` (this is for english) or your locale format <br /> 
+> find for line with ```#en_US.UTF-8 UTF-8``` (this is for english) or your locale format <br /> 
 
-uncomment that line by removeing ```#``` at the begening of the line. <br />
+> uncomment that line by removeing ```#``` at the begening of the line. <br />
 
-save the file (ctrl+o) and exit nano editor (ctrl+x) <br />
+> save the file (ctrl+o) and exit nano editor (ctrl+x) <br />
 
-type below command to generate your locale
+> type below command to generate your locale
 ```
 locale-gen
 ```
-once executed type below command to add genrated locale to your conf file. <br />
+> once executed type below command to add genrated locale to your conf file. <br />
 ```
 nano /etc/locale.conf
 ```
-add your locale formate to the config file <br/>
+> add your locale formate to the config file <br/>
 
 ```
 LANG=en_US.UTF-8
 ```
-save and exit the file <br />
+> save and exit the file <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 20: Configuring host system. <br />
-type below command to set host name <br/>
+> type below command to set host name <br/>
 ```
 nano /etc/hostname
 ```
-add your desired name for the system and save and exit file. <br />
+> add your desired name for the system and save and exit file. <br />
 
-next to configure localhost and internet.
+> next to configure localhost and internet.
 ```
 nano /etc/hosts
 ```
-add these lines after first two heading lines <br />
+> add these lines after first two heading lines <br />
 ```
 127.0.0.1     localhost
 ::1           localhost
@@ -197,22 +188,20 @@ add these lines after first two heading lines <br />
 
 #### Optional Step <br />
 
-mkinitcpio is a Bash script used to create an initial ramdisk environment<br />
+> mkinitcpio is a Bash script used to create an initial ramdisk environment<br />
 
 ```
 mkinitcpio -P
 ``` 
-wait for this to complete <br />
+> wait for this to complete <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 21: Give password for root user. <br />
-root password so create strong password and confirm. <br />
-
+> this is to set root user password so create strong password and confirm. <br />
 ```
 passwd
 ```
-
 --------------------------------------------------------------------------------------------------------------------------------<br />
 #### Step 22: Downlaod grub boot loader. <br />
 ```
@@ -223,9 +212,9 @@ pacman -S grub efibootmgr networkmanager network-manager-applet git pulseaudio a
 ```
 pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pipewire-pulse pipewire-alsa alsa-utils
 ```
-Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
+> Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
 
-accept defaults and download - install packages. <br />
+> for others accept defaults and download - install packages. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
@@ -233,9 +222,9 @@ accept defaults and download - install packages. <br />
 ```
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
 ```
-after this generating then generate config for grub. <br />
+> after this generating then generate config for grub. <br />
 
--> sending output of grub-mkconfig to the grub.cfg file <br />
+> sending output of grub-mkconfig to the grub.cfg file <br />
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -249,48 +238,42 @@ systemctl enable NetworkManager.service
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 25: Add different user (not root) NOTE: This is wheel group user to get sudo privileges. <br />
-
 ```
 useradd -mG wheel username
 ```
-after the above command type below command to set password to created user
+> after the above command type below command to set password to created user
 ```
 passwd username
 ```
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 26: Add User for sudoers file. <br />
-
 ```
 EDITOR=nano visudo
 ```
-
-Find the line named under wheel group. <br />
+> Find the line named under wheel group. <br />
 ```
 #wheel ALL=(ALL) ALL
 ```
-uncommment that line (remove # symbol) - save and exit. <br />
+> uncommment that line (remove # symbol) - save and exit. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 27: Done with the base install now type <br />
-
 ```
 exit
 ```
-after exit command type below command to unmount mounted partitions for safer reboot.
-
+> after exit command type below command to unmount mounted partitions for safer reboot.
 ```
 umount -R /mnt
 ```
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Reboot your computer <br />
-
 ```
 reboot
 ```
--> if you get greeted by grub then you successfully installed base Arch Linux. <br />
+> if you get greeted by grub then you successfully installed base Arch Linux. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
