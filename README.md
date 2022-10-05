@@ -151,35 +151,37 @@ hwclock --systohc
 ```
 nano /etc/locale.gen
 ```
-find for line with ``` #en_US.UTF-8 UTF-8``` (this is for english) or your locale file <br /> 
+find for line with ```#en_US.UTF-8 UTF-8``` (this is for english) or your locale format <br /> 
 
-uncomment that line by removeing # at the begening of the line. <br />
+uncomment that line by removeing ```#``` at the begening of the line. <br />
 
-save the file (ctrl+o) exit editor (ctrl+x) note: on nano <br />
+save the file (ctrl+o) and exit nano editor (ctrl+x) <br />
 
-type - ```locale-gen``` <br />
-
-type below command to add genrated locale to your conf file. <br />
+type below command to generate your locale
+```
+locale-gen
+```
+once executed type below command to add genrated locale to your conf file. <br />
 ```
 nano /etc/locale.conf
 ```
-add these on the first line <br />
+add your locale formate to the config file <br/>
 
 ```
 LANG=en_US.UTF-8
 ```
-save and exit. <br />
+save and exit the file <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
 #### Step 20: Configuring host system. <br />
-
+type below command to set host name <br/>
 ```
 nano /etc/hostname
 ```
-add your desired name for the system. - save and exit. <br />
+add your desired name for the system and save and exit file. <br />
 
- -> to configure localhost and internet. 
+next to configure localhost and internet.
 ```
 nano /etc/hosts
 ```
@@ -195,7 +197,7 @@ add these lines after first two heading lines <br />
 
 #### Optional Step <br />
 
-mkinitcpio <br />
+mkinitcpio is a Bash script used to create an initial ramdisk environment<br />
 
 ```
 mkinitcpio -P
@@ -288,7 +290,7 @@ umount -R /mnt
 ```
 reboot
 ```
-->if you get greeted by grub then you successfully installed base Arch Linux. <br />
+-> if you get greeted by grub then you successfully installed base Arch Linux. <br />
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
