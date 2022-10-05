@@ -282,6 +282,4 @@ reboot
 
 --------------------------------------------------------------------------------------------------------------------------------<br />
 
-##### note : if you are stuck in any of the steps or find it confusing ? or want to contribute / have any feedback ?, feel free to contact me below ways: <br />
-
-##### [Email me](geeknozy@protonmail.com) <br />
+###### create a pull request if you have any issues 
