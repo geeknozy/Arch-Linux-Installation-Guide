@@ -49,15 +49,15 @@ ___
 ___
 #### Step 13: Now downloading the base packages for the system.<br />
 ```
-pacstrap /mnt base base-devel linux linux-headers linux-firmware nano intel-ucode
+pacstrap -K /mnt base base-devel linux linux-headers linux-firmware nano amd-ucode
 ```
 ##### alternative option if you like LTS kernel 
 ```
-pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano intel-ucode
+pacstrap -K /mnt base base-devel linux-lts linux-lts-headers linux-firmware nano amd-ucode
 ```
 ##### alternative option for power user / high performance tuned kernel
 ```
-pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano intel-ucode
+pacstrap -K /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano amd-ucode
 ```
 ##### NOTE: nano is my preferred editor you can also use other command line based like VIM editor. <br />
 ##### NOTE: intel-ucode if you have intel processors or else if you have amd processor use amd-ucode. <br />
