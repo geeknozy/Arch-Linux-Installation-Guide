@@ -169,7 +169,7 @@ pacman -S grub efibootmgr networkmanager network-manager-applet git pulseaudio a
 
 #### alternative if you prefer pipewire which is more mature than pulseaudio <br />
 ```
-pacman -S grub efibootmgr networkmanager network-manager-applet git pipewire pipewire-pulse pipewire-alsa alsa-utils
+pacman -S grub efibootmgr networkmanager git pipewire pipewire-pulse pipewire-alsa alsa-utils
 ```
 > Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
 > for other packages accept defaults and download - install packages. <br />
