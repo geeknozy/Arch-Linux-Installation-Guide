@@ -152,8 +152,9 @@ nano /etc/vconsole.conf
 ```
 
 insert below text - save and close
+```
 KEYMAP=en
-
+```
 ___
 #### Optional Step <br />
 
