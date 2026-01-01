@@ -146,6 +146,14 @@ nano /etc/hosts
 127.0.1.1     hostname.localdomain     hostname
 ```
 ##### NOTE: the hostname is the one you set with above hostname file. <br />
+
+```
+nano /etc/vconsole.conf
+```
+
+insert below text - save and close
+KEYMAP=en
+
 ___
 #### Optional Step <br />
 
