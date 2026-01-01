@@ -153,7 +153,7 @@ nano /etc/vconsole.conf
 
 insert below text - save and close
 ```
-KEYMAP=en
+KEYMAP=us
 ```
 ___
 #### Optional Step <br />
