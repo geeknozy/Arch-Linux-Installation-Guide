@@ -49,7 +49,7 @@ ___
 ___
 #### Step 13: Now downloading the base packages for the system.<br />
 ```
-pacstrap -K /mnt base base-devel linux linux-headers linux-firmware nano amd-ucode
+pacstrap -K /mnt base linux linux-firmware nano amd-ucode
 ```
 ##### NOTE: nano is my preferred editor you can also use other command line based like VIM editor. <br />
 ##### NOTE: intel-ucode if you have intel processors or else if you have amd processor use amd-ucode. <br />
@@ -135,28 +135,15 @@ nano /etc/hostname
 ```
 > add your desired name for the system and save and exit file. <br />
 
-> next to configure localhost and internet.
-```
-nano /etc/hosts
-```
-- add these lines after first two heading lines <br />
-```
-127.0.0.1     localhost
-::1           localhost
-127.0.1.1     hostname.localdomain     hostname
-```
-##### NOTE: the hostname is the one you set with above hostname file. <br />
-
+>set vconsole config file before running the command mkinitcpio -P
 ```
 nano /etc/vconsole.conf
 ```
 
-insert below text - save and close
+insert below text (for us keymap layout) - save and close
 ```
 KEYMAP=us
 ```
-___
-#### Optional Step <br />
 
 - mkinitcpio is a Bash script used to create an initial ramdisk environment<br />
 
@@ -173,15 +160,8 @@ passwd
 ___
 #### Step 22: Downlaod grub boot loader. <br />
 ```
-pacman -S grub efibootmgr networkmanager network-manager-applet git pulseaudio alsa-utils
-```
-
-#### alternative if you prefer pipewire which is more mature than pulseaudio <br />
-```
 pacman -S grub efibootmgr networkmanager git pipewire pipewire-pulse pipewire-alsa alsa-utils
 ```
-> Note: use wireplumber for media session service instead pipewire-media-session (personal preference) <br />
-> for other packages accept defaults and download - install packages. <br />
 ___
 #### Step 23: Installing grub. <br />
 ```
