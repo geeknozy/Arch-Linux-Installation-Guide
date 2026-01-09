@@ -160,7 +160,7 @@ passwd
 ___
 #### Step 22: Downlaod grub boot loader. <br />
 ```
-pacman -S grub efibootmgr networkmanager git pipewire pipewire-pulse pipewire-alsa alsa-utils
+pacman -S grub efibootmgr networkmanager git pipewire pipewire-pulse mtools dosfstools xdg-utils
 ```
 ___
 #### Step 23: Installing grub. <br />
