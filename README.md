@@ -47,6 +47,11 @@ mount /dev/sdX1 /mnt/boot/efi
 ___
 #### Step 12: type ```lsblk``` -> you should see your mount points.<br />
 ___
+#### check timedate
+```
+timedatectl set-ntp true
+```
+___
 #### Step 13: Now downloading the base packages for the system.<br />
 ```
 pacstrap -K /mnt base linux linux-firmware nano amd-ucode
